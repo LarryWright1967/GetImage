@@ -29,8 +29,11 @@ using System.Windows.Forms;
  * thanks to Microsoft and the following
  * https://github.com/
  * https://stackoverflow.com/questions/10442269/scaling-a-system-drawing-bitmap-to-a-given-size-while-maintaining-aspect-ratio
- * 
+ * https://stackoverflow.com/questions/1922040/how-to-resize-an-image-c-sharp
  * LW
+ * 
+ * found items for review
+ * https://imageprocessor.org/
  */
 
 namespace MacGetImage
@@ -91,6 +94,12 @@ namespace MacGetImage
             }
 
             return new Bitmap(bmp);
+        }
+
+        public void GetPixelArray(Bitmap bitmap)
+        {
+            System.Drawing.Imaging.PixelFormat bits = bitmap.PixelFormat;
+
         }
 
         #region IDisposable Support
