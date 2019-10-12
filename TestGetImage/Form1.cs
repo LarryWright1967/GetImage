@@ -68,7 +68,7 @@ namespace TestGetImage
             {
                 if (gi.FullFileName != "")
                 {
-                    if (gi.GetImage(gi.FullFileName) != null)
+                    if (gi.LoadBitmapFromFile(gi.FullFileName) != null)
                     {
                         Bitmap bm = gi.ResizeImage(gi.MacBM, pictureBox1.Width, pictureBox1.Height);
                         pictureBox1.Image = bm;
