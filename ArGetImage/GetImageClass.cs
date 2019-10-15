@@ -42,6 +42,8 @@ using System.Windows.Forms;
  * https://en.wikipedia.org/wiki/BMP_file_format#Example_1
  * https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap?view=netframework-4.8
  * https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.bitmapdata?view=netframework-4.8
+ * https://cffi.readthedocs.io/en/latest/ // python to c language
+ * 
  */
 
 namespace MacGetImage
@@ -195,6 +197,16 @@ namespace MacGetImage
             Disposed = true;
             Bitmap.Dispose();
             BitsHandle.Free();
+        }
+    }
+
+    public class AccessBitMapAsMMF
+    {
+        MemoryMappedFile BMasMMF;
+        public AccessBitMapAsMMF(string bmpFilename)
+        {// check if file exists
+            BMasMMF = MemoryMappedFile.CreateFromFile(bmpFilename, FileMode.Open);
+            // verify that file is bm type
         }
     }
 
